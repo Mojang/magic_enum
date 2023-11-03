@@ -1,7 +1,15 @@
+//  __  __             _        ______                          _____
+// |  \/  |           (_)      |  ____|                        / ____|_     _
+// | \  / | __ _  __ _ _  ___  | |__   _ __  _   _ _ __ ___   | |   _| |_ _| |_
+// | |\/| |/ _` |/ _` | |/ __| |  __| | '_ \| | | | '_ ` _ \  | |  |_   _|_   _|
+// | |  | | (_| | (_| | | (__  | |____| | | | |_| | | | | | | | |____|_|   |_|
+// |_|  |_|\__,_|\__, |_|\___| |______|_| |_|\__,_|_| |_| |_|  \_____|
+//                __/ | https://github.com/Neargye/magic_enum
+//               |___/  version 0.9.3
+//
 // Licensed under the MIT License <http://opensource.org/licenses/MIT>.
 // SPDX-License-Identifier: MIT
-// Copyright (c) 2020 - 2023 Daniil Goncharov <neargye@gmail.com>.
-// Copyright (c) 2020 - 2023 Uruha Komachin <uruhakomachin@gmail.com>.
+// Copyright (c) 2019 - 2023 Daniil Goncharov <neargye@gmail.com>.
 //
 // Permission is hereby  granted, free of charge, to any  person obtaining a copy
 // of this software and associated  documentation files (the "Software"), to deal
@@ -21,25 +29,16 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE  OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-#include <iostream>
+#ifndef NEARGYE_MAGIC_ENUM_ALL_HPP
+#define NEARGYE_MAGIC_ENUM_ALL_HPP
 
-#include <magic_enum.hpp>
+#include "magic_enum.hpp"
+#include "magic_enum_containers.hpp"
+#include "magic_enum_flags.hpp"
+#include "magic_enum_format.hpp"
+#include "magic_enum_fuse.hpp"
+#include "magic_enum_iostream.hpp"
+#include "magic_enum_switch.hpp"
+#include "magic_enum_utility.hpp"
 
-enum class Language : int {
-    日本語 = 10,
-    한국어 = 20,
-    English = 30,
-    😃 = 40,
-};
-
-int main() {
-  std::cout << magic_enum::enum_name(Language::日本語) << std::endl; // Japanese
-  std::cout << magic_enum::enum_name(Language::한국어) << std::endl; // Korean
-  std::cout << magic_enum::enum_name(Language::English) << std::endl; // English
-  std::cout << magic_enum::enum_name(Language::😃) << std::endl; // Emoji
-
-  std::cout << std::boolalpha;
-  std::cout << (magic_enum::enum_cast<Language>("日本語").value() == Language::日本語) << std::endl; // true
-
-  return 0;
-}
+#endif // NEARGYE_MAGIC_ENUM_ALL_HPP
